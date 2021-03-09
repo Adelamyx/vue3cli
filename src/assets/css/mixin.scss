@@ -1,0 +1,20 @@
+/* 
+*   溢出省略
+*   @param {Numner} 行数
+*/
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    min-width: 0;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $rowCount;
+    
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+  }
+}
